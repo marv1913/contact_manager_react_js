@@ -13,9 +13,7 @@ services:
     networks:
       vpcbr:
         ipv4_address: 10.5.0.4
-    command: "npm install"
-    command: npm install pg
-    command: "npm start"
+    command: bash -c "npm install && npm start"
 
   node_rest:
       image: "node"
@@ -30,8 +28,7 @@ services:
       networks:
         vpcbr:
           ipv4_address: 10.5.0.5
-      command: "npm install pg"
-      command: "node index.js"
+      command: bash -c "npm install pg && node index.js"
 
 
   db:
