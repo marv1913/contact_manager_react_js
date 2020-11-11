@@ -1,0 +1,63 @@
+version: "2"
+services:
+  node:
+    image: "node"
+    user: "node"
+    working_dir: /home/node/app/src
+    environment:
+      - NODE_ENV=dev
+    volumes:
+      - ./:/home/node/app
+    ports: 
+      - "127.0.0.1:8081:3000"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.4
+    command: "npm install"
+    command: npm install pg
+    command: "npm start"
+
+  node_rest:
+      image: "node"
+      user: "node"
+      working_dir: /home/node/app/webdev_rest
+      environment:
+        - NODE_ENV=dev
+      volumes:
+        - ./:/home/node/app
+      expose: 
+      - 3300
+      networks:
+        vpcbr:
+          ipv4_address: 10.5.0.5
+      command: "npm install pg"
+      command: "node index.js"
+
+
+  db:
+    image: "postgres"
+    expose: 
+      - 5432
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.6
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=admin
+    volumes: 
+      - database_data:/var/lib/postgresql/data
+      - ./create_databases.sql:/docker-entrypoint-initdb.d/create_databases.sql
+    
+volumes:
+  database_data:
+    driver: local
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 10.5.0.0/16
+         gateway: 10.5.0.1
+
+  
