@@ -1,7 +1,7 @@
 version: "2"
 services:
   node:
-    image: "node:15"
+    image: "node:14"
     user: "node"
     working_dir: /home/node/app/src
     environment:
@@ -28,7 +28,7 @@ services:
       networks:
         vpcbr:
           ipv4_address: 10.5.0.5
-      command: bash -c "npm install pg && node index.js"
+      command: bash -c "npm install pg && npm install axios && node index.js"
 
 
   db:
