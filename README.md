@@ -30,3 +30,6 @@ Alternatively you can build the application manually:
  3. edit database settings in *.js modules
  4. cd to "webdev_rest" directory and run "node index.js"
  5. cd to root directory of cloned repository and run "npm start"
+
+
+![enter image description here](/blob/main/screenshots/login_screen.png)
