@@ -31,5 +31,6 @@ Alternatively you can build the application manually:
  4. cd to "webdev_rest" directory and run "node index.js"
  5. cd to root directory of cloned repository and run "npm start"
 
-
-![enter image description here](/screenshots/login_screen.png)
+# UI
+![design of login screen](/screenshots/login_screen.png)
+![view of main screen](/screenshots/main_screen.png)
