@@ -32,4 +32,4 @@ Alternatively you can build the application manually:
  5. cd to root directory of cloned repository and run "npm start"
 
 
-![enter image description here](/blob/main/screenshots/login_screen.png)
+![enter image description here](/screenshots/login_screen.png)
