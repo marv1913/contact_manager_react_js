@@ -32,5 +32,6 @@ Alternatively you can build the application manually:
  5. cd to root directory of cloned repository and run "npm start"
 
 # UI
-![design of login screen](/screenshots/login_screen.png)
-![view of main screen](/screenshots/main_screen.png)
+![welcome page](/screenshots/main_screen.png)
+![design of login screen](/screenshots/sign_in.png)
+![map](/screenshots/map_with_one_contact.png)
